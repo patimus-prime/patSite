@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 import {
   AppShell,
   Navbar,
@@ -9,10 +9,11 @@ import {
   MediaQuery,
   Burger,
   useMantineTheme,
-} from '@mantine/core';
-import { NavbarNested } from './dependencies/NavBarNested';
-import { HeaderMiddle } from './dependencies/Header';
-import { Hero_Landing } from './hero_landing';
+  AppShellProps,
+} from "@mantine/core";
+import { NavbarNested } from "./dependencies/NavBarNested";
+import { HeaderMiddle } from "./dependencies/Header";
+// import { Hero_Landing } from './Hero_landing';
 
 export default function AppShellNested() {
   const theme = useMantineTheme();
@@ -21,9 +22,14 @@ export default function AppShellNested() {
     <AppShell
       styles={{
         main: {
-          background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
+          background:
+            theme.colorScheme === "dark"
+              ? theme.colors.dark[8]
+              : theme.colors.gray[0],
         },
       }}
+      // THIS IS SUS BUT SHOULD KEEP IT THE SAME SHIT EVERY PAGE:
+      fixed
       navbarOffsetBreakpoint="sm"
       asideOffsetBreakpoint="sm"
       navbar={
@@ -40,13 +46,11 @@ export default function AppShellNested() {
       //   </MediaQuery>
       // }
 
-
       // footer={
       //   <Footer height={60} p="md">
       //     Application footer
       //   </Footer>
       // }
-
 
       header={
         // <Header height={70} p="md">
@@ -62,12 +66,10 @@ export default function AppShellNested() {
         //     </MediaQuery>
 
         //     <Text>Application header</Text>
-            
+
         //   </div>
         // </Header>
-        <HeaderMiddle links= {[
-          { label: 'Home', link: '/' },
-        ]}/>
+        <HeaderMiddle links={[{ label: "Home", link: "/" }]} />
         // links: [
         //   { label: 'Heme Binding Energy Distributions', link: '/' },
         //   { label: 'Multiclassification: SMILES to L1', link: '/' },
@@ -76,8 +78,8 @@ export default function AppShellNested() {
         // ]
       }
     >
-      <Hero_Landing/>
-      <Text>Resize app to see responsive navbar in action</Text>
+      {/* <Hero_Landing/> */}
+      {/* <Text>Resize app to see responsive navbar in action</Text> */}
     </AppShell>
   );
 }

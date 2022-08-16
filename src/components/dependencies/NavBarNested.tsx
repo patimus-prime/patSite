@@ -16,6 +16,7 @@ import {
 } from '@tabler/icons';
 import { UserButton } from './UserButton';
 import { LinksGroup } from './NavbarLinksGroup';
+import { About } from '../../pages/about';
 //import { Logo } from './logo.svg';
 
 // export default {
@@ -48,7 +49,7 @@ const mockdata = [
     ]
   },
   
-  {label: 'Sherlock!', icon: IconPaw},
+  {label: 'Sherlock!', icon: IconPaw, link: '../../pages/about'},
 
   { label: 'Contact', icon: IconBat},
 ];
