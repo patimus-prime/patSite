@@ -8,9 +8,12 @@ import {
   Space,
   Group,
 } from "@mantine/core";
+import { useScrollIntoView } from "@mantine/hooks";
 import { IconBat, IconBrandLinkedin, IconBrandGithub } from "@tabler/icons";
 import { GithubIcon } from "@mantine/ds";
 import sherb_sleepy from "./pics/sherb_sleepy.jpg";
+// import {targetRef} from "./SherlockGrid";
+import "./SherlockGrid";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -101,8 +104,11 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
+// AND HOPEFULLY TARGETREF CORRECTLY PASSED FROM SherlockGrid
+
 export function Hero_Landing() {
   const { classes, cx } = useStyles();
+  const { scrollIntoView, targetRef } = useScrollIntoView<HTMLDivElement>({});
 
   return (
     <div className={classes.wrapper}>
@@ -153,15 +159,22 @@ export function Hero_Landing() {
             GitHub
           </Button>
 
-          {/* FIXME: Scroll-to */}
           <Button
             component="a"
-            href="https://github.com/patimus-prime/"
+            // href="#sherbID" //made obsolete by the below scroll. wow so ez v. refs and stuff
             size="xl"
             radius="xl"
             variant="gradient"
             gradient={{ from: "red", to: "yellow", deg: 45 }}
             className={classes.control}
+            // this solution based on: https://stackoverflow.com/questions/43441856/how-to-scroll-to-an-element
+            // ... user334907's answer
+            onClick={() => {
+              document
+                .getElementById("sherbID")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+
             // leftIcon={<GithubIcon size={20} />}
           >
             😍 DOG!

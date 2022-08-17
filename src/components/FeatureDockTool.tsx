@@ -10,10 +10,18 @@ import {
   Button,
   Space,
 } from "@mantine/core";
+
+import React from "react";
+import { Router, Routes, Route } from "react-router-dom";
+
 import Smiles_Img from "./pics/sherb_sleepy.jpg";
 import Construction_Img from "./pics/pat_construction.gif";
+import { DockingTool } from "../pages/DockingTool";
 
 export function FeatureDockTool() {
+  // i see a lot of documentation of this but it don't work here wtf
+  // const goTo = useNavigate();
+
   return (
     <Container>
       <Space h="xl" />
@@ -30,7 +38,19 @@ export function FeatureDockTool() {
               18 years on the Chicago Police Department.
             </Text>
           </div>
-          {/* <Button color="yellow">Tell me more</Button> */}
+
+          {/* <Route path="/DockingTool" element={<DockingTool />} /> */}
+          {/* <Button
+            component="a"
+            href="/src/pages/DockingTool.tsx" //made obsolete by the below scroll. wow so ez v. refs and stuff
+            size="xl"
+            radius="xl"
+            variant="gradient"
+            gradient={{ from: "yellow", to: "red", deg: 45 }}
+            // onClick={() => {
+            //   goTo("../pages/DockingTool.tsx");
+            // }}
+          ></Button> */}
         </Grid.Col>
         <Grid.Col xs={6} sm={4} md={4} lg={4}>
           <Image

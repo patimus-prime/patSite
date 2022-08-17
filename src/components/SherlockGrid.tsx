@@ -7,11 +7,17 @@ import {
   Space,
   Image,
 } from "@mantine/core";
+
+import { useScrollIntoView } from "@mantine/hooks";
+
 import ReactIcon from "./pics/react.svg";
 import SherbParis from "./pics/sherb_paris.jpg";
 import SherbSleepy from "./pics/sherb_sleepy.jpg";
 import SherbPath from "./pics/sherb_path.jpg";
 import SherbProf from "./pics/sherlock_prof.jpg";
+
+import { useRef } from "react";
+
 // ****************
 // NOT WORTH FIGURING OUT MAPPING ETC. W/ JSON AT THIS TIME LOL
 // **************
@@ -31,6 +37,7 @@ import SherbProf from "./pics/sherlock_prof.jpg";
 
 // export function appCardsSection(): JSX.Element {
 export function SherlockGrid() {
+  // the fn might return more than just targetRef, just hoping to import this elsewhere
   return (
     <Container>
       <Space h="xl" />
@@ -38,9 +45,12 @@ export function SherlockGrid() {
       <Space h="xl" />
       <Space h="xl" />
 
-      <Text align="center">
-        <Title>Sherlock</Title>
-      </Text>
+      {/* NOTE: no special export for ID below, see Hero_landing for how implemented */}
+      <div id="sherbID">
+        <Text align="center">
+          <Title>Sherlock</Title>
+        </Text>
+      </div>
       {/* title option: order={1} mb="30px" */}
       <Space h="xl" />
       <Space h="xl" />
